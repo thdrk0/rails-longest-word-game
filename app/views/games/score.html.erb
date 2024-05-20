@@ -1,0 +1,17 @@
+<h1>Result</h1>
+
+<% @the_word.split(//).each do |l|%>
+<% @impossible = true if !(@letters.split.include?(l.upcase)) %>
+<% end  %>
+<%=  %>
+<% if  !@data["found"] %>
+  <h5> Sorry but <strong><%= @the_word %></strong> is not a real word </h5>
+<% elsif @impossible %>
+  <h5> Sorry but <strong><%= @the_word %></strong> can't be build out of <%= @letters%> </h5>
+  <% else @impossible %>
+  <h5> The word is <strong>VALID</strong></h5>
+<% end  %>
+
+
+
+<%= link_to "Play again", new_path %>
